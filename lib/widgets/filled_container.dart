@@ -6,10 +6,13 @@ class FilledContainer extends StatelessWidget {
   final IconData icon;
   final String text;
   final bool leftIcon;
+  final bool isNew;
+
   const FilledContainer({
     required this.icon,
     required this.text,
     this.leftIcon = true,
+    this.isNew = false,
     super.key,
   });
 
@@ -37,7 +40,7 @@ class FilledContainer extends StatelessWidget {
                   ),
                   const SizedBox(width: 12),
                   SizedBox(
-                    width: 220,
+                    width: 210,
                     child: Text(
                       text,
                       softWrap: true,
@@ -50,10 +53,32 @@ class FilledContainer extends StatelessWidget {
                   ),
                   if (leftIcon) ...[
                     const Spacer(),
-                    const Icon(
-                      NuIcons.abc_ic_go_search_api_material,
-                      color: AppColors.secondaryText,
-                    )
+                    if (!isNew)
+                      const Icon(
+                        NuIcons.abc_ic_go_search_api_material,
+                        color: AppColors.secondaryText,
+                      )
+                    else
+                      DecoratedBox(
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                          color: AppColors.primary,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(3),
+                          child: Text(
+                            'Novo',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 10,
+                                  color: Colors.white,
+                                ),
+                          ),
+                        ),
+                      )
                   ],
                 ],
               ),

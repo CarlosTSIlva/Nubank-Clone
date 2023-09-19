@@ -14,6 +14,7 @@ class FollowCard extends StatelessWidget {
         FilledContainer(
           icon: Icons.car_crash_outlined,
           text: 'Assistentes de pagamento',
+          isNew: true,
         ),
       ],
       onTap: () {},

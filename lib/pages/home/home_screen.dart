@@ -207,22 +207,20 @@ class HomeScreen extends StatelessWidget {
               children: [
                 const SizedBox(width: 24),
                 TextCard(
-                  text: 'Pix no crédito: transfira sem usar o saldo da conta.',
-                  highlightText: '',
+                  text: 'Pix no crédito: ',
+                  highlightText: 'transfira sem usar o saldo da conta.',
                   onTap: () => context.push(
                     const LoanScreen(),
                   ),
                 ),
                 TextCard(
-                  text:
-                      'É simples e rápido recarregar seu celular no Nubank. Confira!',
-                  highlightText: '',
+                  text: 'Meus limites Pix: ',
+                  highlightText: 'proteçãp extra para suas transferências.',
                   onTap: () {},
                 ),
                 TextCard(
-                  text:
-                      'Convide amigos para o Nubank e desbloqueie brasões incríveis.',
-                  highlightText: '',
+                  text: 'Convide amigos para o Nubank ',
+                  highlightText: 'e desbloqueie brasões incríveis.',
                   onTap: () {},
                 ),
                 const SizedBox(width: 10),
